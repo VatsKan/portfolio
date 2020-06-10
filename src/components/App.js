@@ -5,6 +5,7 @@ import {
   Route,
   // Link
 } from "react-router-dom";
+import '../assets/css/fonts.css'
 
 import Home from './Home.js';
 import About from './About.js';
