@@ -28,6 +28,7 @@ const Svg = styled.img`
 const Link = styled.a`
   display: block;
   text-align: center;
+  text-decoration: none;
   margin: 0.3rem;
   `
 const LinkText = styled.p`
