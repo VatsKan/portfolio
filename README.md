@@ -1,4 +1,4 @@
-hosted at: vatsal-portfolio.netlify.com
+Hosted at: https://vatsal-portfolio.netlify.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -4,8 +4,11 @@ import Profile from './shared/Profile.js'
 
 export default function About(props){
   return <>
-    <h1>About</h1>
     <Profile />
+    <h1>About</h1>
+    <p>
+      
+    </p>
     <Nav />
   </>;
 }
