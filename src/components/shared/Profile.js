@@ -5,7 +5,7 @@ import vatsalAvatar from "../../assets/images/vatsal-avatar.jpg";
 import linkedin from "../../assets/icons/linkedin.svg";
 import cvIcon from "../../assets/icons/cv.svg";
 import github from "../../assets/icons/github.svg";
-import resume from '../../assets/documents/resume.pdf' 
+import resume from '../../assets/documents/resume.pdf';
 
 const ProfileContainer = styled.div`
   float: right;
