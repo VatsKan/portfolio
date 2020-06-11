@@ -14,6 +14,12 @@ const HomeContainer = styled.div`
   flex-direction: column;
 `
 
+const Name = styled.h1`
+  margin: 3rem 0 0 0;
+  font-family: Handlee;
+  font-size: 2rem;
+`
+
 const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -47,11 +53,7 @@ const LinkText = styled.p`
   color: green;
   margin: 0;
 `
-const Name = styled.h1`
-  margin: 3rem 0 0 0;
-  font-family: Handlee;
-  font-size: 2rem;
-`
+
 
 export default function Home(props){
   return (
