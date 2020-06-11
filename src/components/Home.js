@@ -17,10 +17,9 @@ const HomeContainer = styled.div`
 const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 30vw;
-  height: 30vw;
   @media only screen and (max-width: 800px){
     width: 60vw;
+    min-width: 240px;
   }
 `
 const MainPic = styled.img`
@@ -49,7 +48,7 @@ const LinkText = styled.p`
   margin: 0;
 `
 const Name = styled.h1`
-  margin: 1rem 0 0 0;
+  margin: 3rem 0 0 0;
   font-family: Handlee;
   font-size: 2rem;
 `
