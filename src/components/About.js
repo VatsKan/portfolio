@@ -7,7 +7,7 @@ export default function About(props){
     <Profile />
     <h1>About</h1>
     <p>
-      
+      This is some text about me
     </p>
     <Nav />
   </>;
