@@ -54,7 +54,6 @@ const LinkText = styled.p`
   margin: 0;
 `
 
-
 export default function Home(props){
   return (
     <HomeContainer>
