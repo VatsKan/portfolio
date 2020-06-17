@@ -57,7 +57,7 @@ const Link = styled.a`
   color: green;
 `
 
-export default function ProjectCard({className}){
+export default function ProjectCard({className, ...props}){
     const [openToggle, setOpenToggle] = React.useState(true); 
 
     const clickHandler = ()=>{
@@ -72,21 +72,24 @@ export default function ProjectCard({className}){
       */}
     <CardHeader onClick={clickHandler}>
       <TitleContainer>
-        <ProjectTitle>Cardley</ProjectTitle>
+        <ProjectTitle>{props.title}</ProjectTitle>
         {openToggle ? <OpenIcon src={downarrow}/> : <CloseIcon src={downarrow}/>}
       </TitleContainer>
       <HeaderSubtitleContainer>
-        <HeaderSubtitle>May 2020 </HeaderSubtitle>
-        <HeaderSubtitle><Span>Website:</Span> http://netlify </HeaderSubtitle>
+        <HeaderSubtitle>{props.date}</HeaderSubtitle>
+        <HeaderSubtitle>
+          <Span>Website: </Span> 
+          <Link href={props.githubURL} target="_blank" rel="noreferrer">{props.website}</Link> 
+        </HeaderSubtitle>
       </HeaderSubtitleContainer>
     </CardHeader>
     {openToggle ? <CardBody>
-        <BodyTitle><Span>Organisation:</Span> Founders and Coders</BodyTitle>
-        <BodyTitle> <Span>Role:</Span> Scrum Master</BodyTitle>
-        <BodyText>Created a REACT flash card application and a RESTful API backend in an agile team. Implemented SCRUM methadologies for group work and user research. Designed the application using Figma prototyping.</BodyText> 
-        <BodyTitle><Span>Github Backend:</Span> <Link href={"https://github.com/fac19/Cardley---backend"} target="_blank" rel="noreferrer">https://github.com/fac19/Cardley---backend</Link></BodyTitle>
-        <BodyTitle><Span>Github Frontend:</Span> <Link href={"https://github.com/fac19/Cardley"} target="_blank" rel="noreferrer">https://github.com/fac19/Cardley</Link></BodyTitle>
-        <BodyTitle><Span>Stack:</Span> React | Jest | Node | Express | postgreSQL | Travis | Heroku | Netlify | Git | GitHub | Figma</BodyTitle>
+        <BodyTitle><Span>Organisation:</Span> {props.organisation} </BodyTitle>
+        <BodyTitle> <Span>Role:</Span> {props.role} </BodyTitle>
+        <BodyText> {props.about} </BodyText> 
+        <BodyTitle><Span>Github Frontend:</Span> <Link href={props.githubURL} target="_blank" rel="noreferrer">{props.githubURL}</Link></BodyTitle>
+        <BodyTitle><Span>Github Backend:</Span> <Link href={props.githubURL2} target="_blank" rel="noreferrer">{props.githubURL2}</Link></BodyTitle>
+        <BodyTitle><Span>Stack:</Span> {props.stack} </BodyTitle>
     </CardBody> : ''}
   </Card>
 }
