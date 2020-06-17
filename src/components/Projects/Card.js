@@ -5,6 +5,7 @@ import downarrow from "../../assets/icons/downarrow.svg";
 
 const Card = styled.div`
   background: LightBlue;
+  margin: 0 0 1rem 0;
 `
 
 const CardHeader = styled.div``
@@ -56,7 +57,7 @@ const Link = styled.a`
   color: green;
 `
 
-export default function ProjectCard(){
+export default function ProjectCard({className}){
     const [openToggle, setOpenToggle] = React.useState(true); 
 
     const clickHandler = ()=>{
@@ -64,7 +65,11 @@ export default function ProjectCard(){
         console.log(openToggle)
     }
 
-    return  <Card>
+    return  <Card className={className}>
+      {/* note the className prop, is so that the 
+      lastCard styling works for styled components 
+      in the Projects.js file.
+      */}
     <CardHeader onClick={clickHandler}>
       <TitleContainer>
         <ProjectTitle>Cardley</ProjectTitle>
