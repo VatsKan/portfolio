@@ -4,15 +4,17 @@ import styled from 'styled-components';
 
 const NavContainer = styled.ul`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: Cornsilk;
-  padding: 0.5rem 0rem 0.7rem 0rem;
   margin: 0;
+  padding: 0.5rem 0rem 0.7rem 0rem;
   width: 100%;
   position: fixed;
   bottom: 0; 
-`
+  left: 0; 
+  `
+  //note that left: 0 is a fix as nav bar is slightly off place on other pages otherwise.
 
 const ListItem = styled.li`
   list-style-type: none;

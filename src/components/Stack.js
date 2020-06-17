@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from './shared/Nav.js';
-import Profile from './shared/Profile.js'
 
-export default function Stack(props){
+import Nav from './shared/Nav.js';
+import Header from './shared/Header.js'
+
+export default function Stack(){
   return (
     <>
-      <Profile />
-      <h1>Stack</h1>
+      <Header title={"Stack"} />
       <Nav />
     </>
   );

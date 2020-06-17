@@ -54,8 +54,7 @@ const LinkText = styled.p`
   margin: 0;
 `
 
-
-export default function Home(props){
+export default function Home(){
   return (
     <HomeContainer>
       <Name>Vatsal Kanoria</Name>
