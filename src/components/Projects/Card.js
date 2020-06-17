@@ -8,6 +8,7 @@ const Card = styled.div`
 `
 
 const CardHeader = styled.div``
+//change to button?
 
 const ProjectTitle = styled.h3`
   margin: 0.5rem 0 0 0;
@@ -33,6 +34,7 @@ const Span = styled.span`
 `
 const OpenIcon = styled.img`
 `
+// make icon bigger?
 // width: 1.3rem;
 // height: 1.3rem;
 
@@ -55,26 +57,31 @@ const Link = styled.a`
 `
 
 export default function ProjectCard(){
-    const open = true; //change to a state
+    const [openToggle, setOpenToggle] = React.useState(true); 
+
+    const clickHandler = ()=>{
+        setOpenToggle(!openToggle)
+        console.log(openToggle)
+    }
 
     return  <Card>
-    <CardHeader>
+    <CardHeader onClick={clickHandler}>
       <TitleContainer>
         <ProjectTitle>Cardley</ProjectTitle>
-        {open ? <OpenIcon src={downarrow}/> : <CloseIcon src={downarrow}/>}
+        {openToggle ? <OpenIcon src={downarrow}/> : <CloseIcon src={downarrow}/>}
       </TitleContainer>
       <HeaderSubtitleContainer>
         <HeaderSubtitle>May 2020 </HeaderSubtitle>
         <HeaderSubtitle><Span>Website:</Span> http://netlify </HeaderSubtitle>
       </HeaderSubtitleContainer>
     </CardHeader>
-    <CardBody>
-      <BodyTitle> <Span>Role:</Span> Scrum Master</BodyTitle>
+    {openToggle ? <CardBody>
         <BodyTitle><Span>Organisation:</Span> Founders and Coders</BodyTitle>
+        <BodyTitle> <Span>Role:</Span> Scrum Master</BodyTitle>
         <BodyText>Created a REACT flash card application and a RESTful API backend in an agile team. Implemented SCRUM methadologies for group work and user research. Designed the application using Figma prototyping.</BodyText> 
         <BodyTitle><Span>Github Backend:</Span> <Link href={"https://github.com/fac19/Cardley---backend"} target="_blank" rel="noreferrer">https://github.com/fac19/Cardley---backend</Link></BodyTitle>
         <BodyTitle><Span>Github Frontend:</Span> <Link href={"https://github.com/fac19/Cardley"} target="_blank" rel="noreferrer">https://github.com/fac19/Cardley</Link></BodyTitle>
         <BodyTitle><Span>Stack:</Span> React | Jest | Node | Express | postgreSQL | Travis | Heroku | Netlify | Git | GitHub | Figma</BodyTitle>
-    </CardBody>
+    </CardBody> : ''}
   </Card>
 }
