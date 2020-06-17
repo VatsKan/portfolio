@@ -79,7 +79,7 @@ export default function ProjectCard({className, ...props}){
         <HeaderSubtitle>{props.date}</HeaderSubtitle>
         <HeaderSubtitle>
           <Span>Website: </Span> 
-          <Link href={props.githubURL} target="_blank" rel="noreferrer">{props.website}</Link> 
+          <Link href={props.website} target="_blank" rel="noreferrer">{props.website}</Link> 
         </HeaderSubtitle>
       </HeaderSubtitleContainer>
     </CardHeader>
