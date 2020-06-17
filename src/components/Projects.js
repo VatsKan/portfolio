@@ -1,12 +1,13 @@
 import React from 'react';
-import Nav from './shared/Nav.js';
-import Profile from './shared/Profile.js'
 
-export default function Projects(props){
+import Nav from './shared/Nav.js';
+import Header from './shared/Header.js'
+
+
+export default function Projects(){
   return (
     <>
-      <Profile />
-      <h1>Projects</h1>
+      <Header title={"Projects"} />
       <Nav />
     </>
   );

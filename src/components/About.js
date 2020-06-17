@@ -2,22 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Nav from './shared/Nav.js';
-import Profile from './shared/Profile.js';
+import Header from './shared/Header.js'
+// import Profile from './shared/Profile.js';
 
 const Para = styled.p`
   text-indent: 1.2rem;
+  padding: 0 0.2rem 0 0.2rem;
 `
+
 const FirstPara = styled(Para)`
   text-indent: 0;
 `
+
 const LastPara = styled(Para)`
   margin: 0 0 3rem 0;
 `
 
-export default function About(props){
+const Link = styled.a`
+  text-decoration: none;
+  color: green;
+`
+
+export default function About(){
   return <>
-    <Profile />
-    <h1>About</h1>
+    <Header title={"About"} />
     <FirstPara>
     I am a driven and enthusiastic software developer interested in developing 
     applications for social good.
@@ -30,10 +38,11 @@ export default function About(props){
     <LastPara>
       I decided to learn web development through a selective 
       four month Full-Stack development course with Founders 
-      and Coders. I learned a lot of new javascript based 
-      technologies in this program through projects, research, 
+      and Coders. I learned a lot of new javascript 
+      based <Link href={"/Stack"}>technologies</Link> in this program 
+      through <Link href={"/Projects"}>projects</Link>, research, 
       agile group work, code reviews and presentations. 
     </LastPara>
     <Nav />
-  </>;
+  </>
 }

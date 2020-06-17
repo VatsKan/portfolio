@@ -11,7 +11,7 @@ import Home from './Home.js';
 import About from './About.js';
 import Projects from './Projects.js';
 import Stack from './Stack.js';
-import Error from './Error.js'
+import Error from './Error.js';
 
 function App() {
   return(
