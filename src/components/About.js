@@ -7,12 +7,14 @@ import Header from './shared/Header.js'
 
 const Para = styled.p`
   text-indent: 1.2rem;
-  padding: 0 0.2rem 0 0.2rem;
+  padding: 0 0.4rem 0 0.4rem;
+  text-align: justify;
+  hyphens: auto;
 `
 
-const FirstPara = styled(Para)`
-  text-indent: 0;
-`
+// const FirstPara = styled(Para)`
+//   text-indent: 0;
+// `
 
 const LastPara = styled(Para)`
   margin: 0 0 3rem 0;
@@ -21,15 +23,16 @@ const LastPara = styled(Para)`
 const Link = styled.a`
   text-decoration: none;
   color: green;
+  hyphens: none;
 `
 
 export default function About(){
   return <>
     <Header title={"About"} />
-    <FirstPara>
+    <Para>
     I am a driven and enthusiastic software developer interested in developing 
     applications for social good.
-    </FirstPara>
+    </Para>
     <Para>
     My first coding langauage was a C++ course I did during my Mathematics degree 
     (First Class BSc with Hons) at University of London. I learned here that I loved 
