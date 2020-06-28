@@ -1,26 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import FadeIn from './shared/animations/FadeIn.js';
+
 import Nav from './shared/Nav.js';
 import Header from './shared/Header.js';
-
-
-
-
-import { Transition } from 'react-transition-group';
-
-const duration = 1000;
-
-const defaultStyle = {
-  transition: `opacity ${duration}ms ease-out`,
-}
-
-const transitionStyles = {
-  entering: { opacity: 1 },
-  entered:  { opacity: 1 },
-  exiting:  { opacity: 0 },
-  exited:  { opacity: 0 },
-};
 
 const SubHeader = styled.h3`
 color: lightgrey;
@@ -45,20 +29,9 @@ const BigList = styled.ol`
 list-style: none;
 `
 
-export default function Stack(){
-  const [inProp, setInProp] = React.useState(false);
-
-  React.useEffect(()=>{
-    const startAnimation = setTimeout(()=>{
-      setInProp(true);
-    }, 1)
-    return () => clearTimeout(startAnimation)
-  }, [])
-  
+export default function Stack(){  
   return (
-    <>
-    <Transition in={inProp} timeout={duration}>
-    {state => (<div style={{...defaultStyle, ...transitionStyles[state]}}>
+    <FadeIn>
         <Header title={"Stack"} />
         <BigList>
           <ListItem>
@@ -99,9 +72,6 @@ export default function Stack(){
           </ListItem>
         </BigList>
         <Nav />
-      </div>)
-    }
-    </Transition>
-    </>
+    </FadeIn>
   );
 }

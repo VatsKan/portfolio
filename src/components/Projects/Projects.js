@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import FadeIn from '../shared/animations/FadeIn.js';
+
 import Nav from '../shared/Nav.js';
 import Header from '../shared/Header.js';
 import Card from './Card.js'
@@ -11,7 +13,7 @@ const LastCard = styled(Card)`
 
 export default function Projects(){ 
   return (
-    <>
+    <FadeIn>
       <Header title={"Projects"} />
       <Card 
         title="iZataari"
@@ -36,6 +38,6 @@ export default function Projects(){
         stack="React | Jest | Node | Express | postgreSQL | Travis | Heroku | Netlify | Git | GitHub | Figma"
       />
       <Nav />
-    </>
+    </FadeIn>
   );
 }
