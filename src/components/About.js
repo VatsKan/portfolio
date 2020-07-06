@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import FadeIn from './shared/animations/FadeIn.js';
-
 import Nav from './shared/Nav.js';
 import Header from './shared/Header.js'
 
@@ -29,7 +27,7 @@ const Link = styled.a`
 `
 
 export default function About(){
-  return <FadeIn>
+  return <>
     <Header title={"About"} />
     <Para>
     I am a driven and enthusiastic software developer interested in developing 
@@ -49,5 +47,5 @@ export default function About(){
       agile group work, code reviews and presentations. 
     </LastPara>
     <Nav />
-  </FadeIn>
+  </>
 }

@@ -2,8 +2,6 @@ import React from 'react';
 import Nav from './shared/Nav.js'
 import styled from 'styled-components';
 
-import FadeIn from './shared/animations/FadeIn.js';
-
 import vatsalPic from "../assets/images/vatsal-pic.jpg";
 import linkedin from "../assets/icons/linkedin.svg";
 import cvIcon from "../assets/icons/cv.svg";
@@ -58,7 +56,7 @@ const LinkText = styled.p`
 
 export default function Home(){
   return (
-    <FadeIn>
+    <>
       <HomeContainer>
         <Name>Vatsal Kanoria</Name>
         <MainPic  alt="Vatsal Picture" src={vatsalPic} />
@@ -78,7 +76,7 @@ export default function Home(){
         </LinkContainer>
         <Nav />
       </HomeContainer>
-    </FadeIn>
+    </>
   );
 } 
 

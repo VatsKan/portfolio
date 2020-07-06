@@ -1,11 +1,16 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
+  useLocation,
+  useHistory,
   // Link
 } from "react-router-dom";
 import '../assets/css/fonts.css'
+
+import { TransitionGroup } from 'react-transition-group'
+import FadeIn from './shared/animations/FadeIn.js';
+import FadeOut from './shared/animations/FadeOut.js';
 
 import Home from './Home.js';
 import About from './About.js';
@@ -14,11 +19,28 @@ import Stack from './Stack.js';
 import Error from './Error.js';
 
 function App() {
+  const [inProp, setInProp] = React.useState(true);
+
+  const history = useHistory()
+  const location = useLocation();
+
+  //  React.useEffect(()=>{
+  //     const startAnimation = setTimeout(()=>{
+  //       setInProp(true);
+  //     }, 1)
+  //     return () => clearTimeout(startAnimation)
+  //   }, [])
+  // history.listen(()=>{
+  //   console.log(inProp)
+  //   setInProp(false)
+  // })
   return(
-    <Router>
-       <Switch>
+    <TransitionGroup>
+        <Switch location={location}>
           <Route exact path="/">
+      <FadeIn inProp={inProp} setInProp={setInProp}>
             <Home />
+      </FadeIn>
           </Route>
           <Route exact path="/about">
             <About />
@@ -33,7 +55,7 @@ function App() {
             <Error />
           </Route>
         </Switch>
-    </Router>
+    </TransitionGroup>
   )
 }
 
