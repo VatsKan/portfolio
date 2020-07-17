@@ -28,23 +28,22 @@ const HeaderSubtitleContainer = styled.div`
   display: flex;
   justify-content: flex-start;
 `
+
 const HeaderSubtitle = styled.p`
   padding: 0 0 0 0.5rem;
   font-style: italic;
   margin: 0.5rem 0;
 `
+
 const Span = styled.span`
   font-weight: bold;
 `
-const OpenIcon = styled.img`
-`
-// make icon bigger?
-// width: 1.3rem;
-// height: 1.3rem;
 
-const CloseIcon = styled(OpenIcon)`
-  transform: rotate(180deg); 
+const OpenCloseIcon = styled(motion.img)`
+  width: 1.3rem;
+  height: 1.3rem;
 `
+
 const CardBody = styled(motion.div)`
   background: MintCream;
   padding: 0.5rem;
@@ -60,6 +59,7 @@ const Link = styled.a`
   color: green;
 `
 
+// framer motion variants
 const hiddenVariant = {
   open: {
     display: "initial", 
@@ -81,6 +81,15 @@ const cardBodyVariant = {
   },
 }
 
+const rotateVariant = {
+  open: {
+    rotate: 0
+  },
+  closed: {
+    rotate: 180
+  }
+}
+
 export default function ProjectCard({className, ...props}){
     const [openToggle, setOpenToggle] = React.useState(true); 
 
@@ -97,7 +106,10 @@ export default function ProjectCard({className, ...props}){
       <CardHeader onClick={clickHandler}>
         <TitleContainer>
           <ProjectTitle>{props.title}</ProjectTitle>
-          {openToggle ? <OpenIcon src={downarrow}/> : <CloseIcon src={downarrow}/>}
+          <OpenCloseIcon src={downarrow}
+             animate={openToggle ? "open" : "closed"}
+             variants={rotateVariant}
+          />
         </TitleContainer>
         <HeaderSubtitleContainer>
           <HeaderSubtitle>{props.date}</HeaderSubtitle>
