@@ -34,7 +34,7 @@ export default function Stack(){
       <BigList>
         <ListItem>
           <SubHeader>Languages. </SubHeader>
-          <List>Javascript, HTML, CSS, SQL, C++. </List>
+          <List>Javascript, HTML, CSS, SQL, Python, C++. </List>
         </ListItem>
         <ListItem>
           <SubHeader>Frontend Frameworks. </SubHeader>
@@ -42,7 +42,7 @@ export default function Stack(){
         </ListItem>
         <ListItem>
           <SubHeader>Backend Frameworks. </SubHeader>
-          <List>Node, Express. </List>
+          <List>Node, Express, Django. </List>
         </ListItem>
         <ListItem>
           <SubHeader>Databases. </SubHeader>
@@ -50,15 +50,15 @@ export default function Stack(){
         </ListItem>
         <ListItem>
           <SubHeader>Management. </SubHeader>
-          <List>Git, GitHub, Agile. </List>
+          <List>Git, GitHub, Jira, Agile. </List>
         </ListItem>
         <ListItem>
           <SubHeader>Testing. </SubHeader>
           <List>Jest, Tape, Cypress, Chai, Mocha, CodeCov, ESLint. </List>
         </ListItem>
         <ListItem>
-          <SubHeader>CI/CD. </SubHeader>
-          <List>TravisCI, Heroku, Netlify. </List>
+          <SubHeader>Deployment. </SubHeader>
+          <List>TravisCI, GCP, Docker, Heroku, Netlify. </List>
         </ListItem>
         <ListItem>
           <SubHeader>Serverless. </SubHeader>
@@ -66,7 +66,7 @@ export default function Stack(){
         </ListItem>
         <ListItem>
           <SubHeader>UI/UX. </SubHeader>
-          <List>Figma, d3, styled-components, Bootstrap, MaterialUI. </List>
+          <List>Figma, d3, Styled Components, Framer Motion, Bootstrap, MaterialUI. </List>
         </ListItem>
       </BigList>
       <Nav />
