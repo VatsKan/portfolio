@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Nav from '../shared/Nav.js';
 import Header from '../shared/Header.js';
-import Card from './Card.js'
+import Card from './Card.js';
 
 const LastCard = styled(Card)`
   margin-bottom: 4.5rem;
@@ -13,6 +13,17 @@ export default function Projects(){
   return (
     <>
       <Header title={"Projects"} />
+      <Card 
+        first={true} // THIS PROP IS NEEDED FOR ONLY THE FIRST CARD, TO PREVENT ERROR IN FRAMER MOTION
+        title="iZataari"
+        date="June 2020"
+        website="https://radio-zaatari.netlify.app/"
+        organisation="Tech For Better, iZaatari"
+        role="QA"
+        about="A frontend REACT application to aid volunteers hosting workshops for a radio broadcasting station for refugees in Zataari. As quality assurance lead, we did extensive user testing to inform and refactor the design; wrote documentation and end-to-end tests in Cypress; as well as using ESLint, Prettier and CodeCov in our CI pipeline, and smaller unit/integration tests using Jest."
+        githubURL="https://github.com/fac19/Zaatari-Radio"
+        stack="React | Airtable | Netlify Lambda | Cypress | Chai | Mocha | Jest | Travis | Figma | Git | Jira | Notion"
+      />
       <Card 
         title="iZataari"
         date="June 2020"
