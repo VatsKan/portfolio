@@ -40,8 +40,8 @@ const Span = styled.span`
 `
 
 const OpenCloseIcon = styled(motion.img)`
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 2rem;
+  height: 2rem;
 `
 
 const CardBody = styled(motion.div)`
@@ -60,6 +60,9 @@ const Link = styled.a`
 `
 
 // framer motion variants
+
+// this hiddenVariant isn't doing exactly what I want it to
+// needs to happen after the cardBodyVariant is complete/or at the same time/or find some other way to do the animation
 const hiddenVariant = {
   open: {
     display: "initial", 
@@ -83,10 +86,10 @@ const cardBodyVariant = {
 
 const rotateVariant = {
   open: {
-    rotate: 0
+    rotateX: 0
   },
   closed: {
-    rotate: 180
+    rotateX: 180
   }
 }
 
@@ -95,7 +98,6 @@ export default function ProjectCard({className, ...props}){
 
     const clickHandler = ()=>{
         setOpenToggle(!openToggle)
-        console.log(openToggle)
     }
 
     return  <Card className={className}>
@@ -109,6 +111,7 @@ export default function ProjectCard({className, ...props}){
           <OpenCloseIcon src={downarrow}
              animate={openToggle ? "open" : "closed"}
              variants={rotateVariant}
+             transition={{ duration: 0.5 }}
           />
         </TitleContainer>
         <HeaderSubtitleContainer>
