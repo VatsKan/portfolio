@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  useLocation
-  // Link
+  useLocation,
 } from "react-router-dom";
 import '../assets/css/fonts.css'
 
@@ -16,59 +14,76 @@ import Error from './Error.js';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+const animationDuration = 1.5;
 
 const pageVariants = {
   initial: {
     opacity: 0,
-    x: "-100vw",
-    scale: 0.8
   },
   in: {
     opacity: 1,
-    x: 0,
-    scale: 1
+    transition: {
+      delay: animationDuration,
+      when: 'beforeChildren',
+      duration: animationDuration
+      // staggerChildren: 0.1,
+    },
   },
   out: {
     opacity: 0,
-    x: "100vw",
-    scale: 1.2
   }
 };
 
+const pageTransition = {
+  duration: animationDuration
+};
+
+function PageAnimation({children}) {
+  return <motion.div 
+    transition={pageTransition}
+    initial="initial"
+    animate="in"
+    exit="out"
+    variants={pageVariants}
+  >
+    {children}
+  </motion.div>
+}
+
 function App() {
-  // const location = useLocation();
-  // console.log(location.pathname)
+  const location = useLocation();
+
   return(
-    <Router>
-      <AnimatePresence>
-       <Switch 
-      //  location={location} key={location.pathname}
+    <AnimatePresence>
+       <Switch
+        location={location} 
+        key={location.pathname}
        >
-          <Route exact path="/">
-            <motion.div 
-             initial="initial"
-             animate="in"
-             exit="out"
-             variants={pageVariants}
-            >
-              <Home />
-            </motion.div>
-          </Route>
-          <Route exact path="/about">
+        <Route exact path="/">
+          <PageAnimation>
+            <Home />
+          </PageAnimation>
+        </Route>
+        <Route exact path="/about">
+          <PageAnimation>
             <About />
-          </Route>
-          <Route exact path="/projects">
+          </PageAnimation>
+        </Route>
+        <Route exact path="/projects">
+          <PageAnimation>
             <Projects />
-          </Route>
-          <Route exact path="/stack">
+          </PageAnimation>
+        </Route>
+        <Route exact path="/stack">
+          <PageAnimation>
             <Stack />
-          </Route>
-          <Route>
-            <Error />
-          </Route>
-        </Switch>
-      </AnimatePresence>
-    </Router>
+          </PageAnimation>
+        </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
+    </AnimatePresence>
   )
 }
 
