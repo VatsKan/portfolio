@@ -1,9 +1,8 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  // Link
+  useLocation,
 } from "react-router-dom";
 import '../assets/css/fonts.css'
 
@@ -13,27 +12,43 @@ import Projects from './Projects/Projects.js';
 import Stack from './Stack.js';
 import Error from './Error.js';
 
+import { AnimatePresence } from 'framer-motion';
+import FadeInFadeOut from './shared/animations/FadeInFadeOut.js';
+
 function App() {
+  const location = useLocation();
+
   return(
-    <Router>
-       <Switch>
-          <Route exact path="/">
+    <AnimatePresence>
+       <Switch
+        location={location} 
+        key={location.pathname}
+       >
+        <Route exact path="/">
+          <FadeInFadeOut>
             <Home />
-          </Route>
-          <Route exact path="/about">
+          </FadeInFadeOut>
+        </Route>
+        <Route exact path="/about">
+          <FadeInFadeOut>
             <About />
-          </Route>
-          <Route exact path="/projects">
+          </FadeInFadeOut>
+        </Route>
+        <Route exact path="/projects">
+          <FadeInFadeOut>
             <Projects />
-          </Route>
-          <Route exact path="/stack">
+          </FadeInFadeOut>
+        </Route>
+        <Route exact path="/stack">
+          <FadeInFadeOut>
             <Stack />
-          </Route>
-          <Route>
-            <Error />
-          </Route>
-        </Switch>
-    </Router>
+          </FadeInFadeOut>
+        </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
+    </AnimatePresence>
   )
 }
 

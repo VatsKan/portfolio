@@ -74,6 +74,7 @@ const hiddenVariant = {
     display: "none",
   },
 }
+// consider changing the height instead, making it 0 and 100%!!!
 
 const cardBodyVariant = {
   open: {
