@@ -12,43 +12,8 @@ import Projects from './Projects/Projects.js';
 import Stack from './Stack.js';
 import Error from './Error.js';
 
-import { AnimatePresence, motion } from 'framer-motion';
-
-const animationDuration = 1.5;
-
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  in: {
-    opacity: 1,
-    transition: {
-      delay: animationDuration,
-      when: 'beforeChildren',
-      duration: animationDuration
-      // staggerChildren: 0.1,
-    },
-  },
-  out: {
-    opacity: 0,
-  }
-};
-
-const pageTransition = {
-  duration: animationDuration
-};
-
-function PageAnimation({children}) {
-  return <motion.div 
-    transition={pageTransition}
-    initial="initial"
-    animate="in"
-    exit="out"
-    variants={pageVariants}
-  >
-    {children}
-  </motion.div>
-}
+import { AnimatePresence } from 'framer-motion';
+import FadeInFadeOut from './shared/animations/FadeInFadeOut.js';
 
 function App() {
   const location = useLocation();
@@ -60,24 +25,24 @@ function App() {
         key={location.pathname}
        >
         <Route exact path="/">
-          <PageAnimation>
+          <FadeInFadeOut>
             <Home />
-          </PageAnimation>
+          </FadeInFadeOut>
         </Route>
         <Route exact path="/about">
-          <PageAnimation>
+          <FadeInFadeOut>
             <About />
-          </PageAnimation>
+          </FadeInFadeOut>
         </Route>
         <Route exact path="/projects">
-          <PageAnimation>
+          <FadeInFadeOut>
             <Projects />
-          </PageAnimation>
+          </FadeInFadeOut>
         </Route>
         <Route exact path="/stack">
-          <PageAnimation>
+          <FadeInFadeOut>
             <Stack />
-          </PageAnimation>
+          </FadeInFadeOut>
         </Route>
         <Route>
           <Error />
